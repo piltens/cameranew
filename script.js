@@ -1,4 +1,5 @@
 var constraints = { video: { facingMode: {exact: "environment" } }, audio: false };
+var isDark = false;
 
 const cameraView = document.querySelector("#camera--view"),
 	cameraOutput = document.querySelector("#camera--output")
@@ -8,14 +9,17 @@ const cameraView = document.querySelector("#camera--view"),
 	canvas = document.querySelector("#canvas"),
 	span = document.querySelector("#brightness span"),
 
-var isDark = false;
-
 function cameraStart() {
 	navigator.mediaDevices
 	.getUserMedia(constraints)
 	.then(function(stream)){
+	track = stream.getTracks()[0];
+	cameraView.srcObject = stream;
 
-	var track = stream.getTracks()[0];
+	})
+    .catch(function(error) {
+        console.error("Oops. Something is broken.", error);
+    });
 
 	video.addEventListener( "loadedmetadata", funtion (e) {
 
