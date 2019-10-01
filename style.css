@@ -1,0 +1,50 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+aside {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 0 1em;
+	background-color: yellow;
+	z-index: 3;
+}
+
+body:not(.isDark) #fore--ground {
+	position: fixed;
+	display: none;
+
+}
+
+#camera, #camera--view, #camera--sensor, #camera--output{
+	position: fixed;
+	height; 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+#camera--view, #camera--sensor, #camera--output{
+	transform: scaleX(+1);
+	transform: scaleY(+1);
+	fileter: FlipH;
+}
+
+#fore--groundn {
+	position: fixed;
+	background-color: red;
+	z-index: 2;
+}
+
+#back--ground {
+	z-index:1;
+}
+
+canvas {
+	position: fixed;
+	top:0;
+	left: 0;
+}
