@@ -22,9 +22,9 @@ function cameraStart() {
 		setIntervall(function()){
 			getBrightness();
 			},500);
-		};
-	}
-
+		});
+	})
+}
 
 function getBrightness(){
 	
